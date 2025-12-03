@@ -59,6 +59,18 @@ Shows command-line argument handling with shebang support.
 dotnet run greet.cs -- Alice "Good morning"
 ```
 
+### 7. MCP Server (`mcp-server.cs`)
+A Model Context Protocol (MCP) server with HTTP transport demonstrating AI agent integration.
+```bash
+dotnet run mcp-server.cs
+```
+Then test with: `curl http://localhost:5000/`
+
+The MCP server exposes tools that can be called by AI agents:
+- **GetTime**: Get current time in a specific city
+- **Echo**: Echo a message back
+- **Add**: Add two numbers together
+
 ## 📚 Learn More
 
 - [Microsoft Learn: Build file-based apps](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/file-based-programs)
