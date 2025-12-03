@@ -30,7 +30,7 @@ Available Endpoints:
   DELETE /mcp - Close MCP session
 
 Available Tools:
-  - GetTime: Get the current time in a specific city
+  - GetTime: Get the current UTC time
   - Echo: Echo a message back to the client
   - Add: Add two numbers together
 ", "text/plain"));
@@ -43,11 +43,11 @@ app.Run();
 [McpServerToolType]
 public static class TimeTool
 {
-    [McpServerTool, Description("Get the current time in a specific city")]
-    public static string GetTime(string city = "UTC")
+    [McpServerTool, Description("Get the current UTC time (timezone conversion not implemented in this demo)")]
+    public static string GetTime()
     {
         var time = DateTime.UtcNow;
-        return $"Current time in {city}: {time:yyyy-MM-dd HH:mm:ss} UTC";
+        return $"Current UTC time: {time:yyyy-MM-dd HH:mm:ss}";
     }
 }
 

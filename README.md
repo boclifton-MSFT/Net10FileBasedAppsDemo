@@ -67,7 +67,7 @@ dotnet run mcp-server.cs
 Then test with: `curl http://localhost:5000/`
 
 The MCP server exposes tools that can be called by AI agents:
-- **GetTime**: Get current time in a specific city
+- **GetTime**: Get current UTC time
 - **Echo**: Echo a message back
 - **Add**: Add two numbers together
 
