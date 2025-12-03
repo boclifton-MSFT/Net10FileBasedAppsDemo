@@ -53,6 +53,12 @@ Demonstrates async file I/O operations.
 dotnet run file-operations.cs
 ```
 
+### 6. Greet Script (`greet.cs`)
+Shows command-line argument handling with shebang support.
+```bash
+dotnet run greet.cs -- Alice "Good morning"
+```
+
 ## 📚 Learn More
 
 - [Microsoft Learn: Build file-based apps](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/file-based-programs)
