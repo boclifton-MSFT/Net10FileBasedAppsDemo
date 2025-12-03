@@ -14,4 +14,7 @@ obj/
 *.tmp
 *.log
 .vs/
-.vscode/
+
+# VS Code user-specific settings (keep workspace config)
+.vscode/settings.json
+.vscode/launch.json

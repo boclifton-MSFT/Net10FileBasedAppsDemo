@@ -4,8 +4,18 @@
 // Run with: dotnet run web-api.cs
 // Then visit: http://localhost:5000/
 
+using System.Linq;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
+// Sample data
+var products = new[]
+{
+    new Product(1, "Laptop", 999.99m),
+    new Product(2, "Mouse", 29.99m),
+    new Product(3, "Keyboard", 79.99m)
+};
 
 app.MapGet("/", () => new
 {
@@ -19,22 +29,10 @@ app.MapGet("/", () => new
     }
 });
 
-app.MapGet("/products", () => new[]
-{
-    new Product(1, "Laptop", 999.99m),
-    new Product(2, "Mouse", 29.99m),
-    new Product(3, "Keyboard", 79.99m)
-});
+app.MapGet("/products", () => products);
 
 app.MapGet("/products/{id}", (int id) =>
 {
-    var products = new[]
-    {
-        new Product(1, "Laptop", 999.99m),
-        new Product(2, "Mouse", 29.99m),
-        new Product(3, "Keyboard", 79.99m)
-    };
-    
     var product = products.FirstOrDefault(p => p.Id == id);
     return product is not null ? Results.Ok(product) : Results.NotFound();
 });
