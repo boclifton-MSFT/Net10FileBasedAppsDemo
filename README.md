@@ -91,6 +91,58 @@ The MCP server exposes tools that can be called by AI agents:
 - Use VS Code's C# Dev Kit for IntelliSense and debugging
 - Great for scripting, prototyping, and teaching C#
 
+## ⚠️ Limitations & Best Practices
+
+While file-based apps are powerful for certain use cases, it's important to understand their limitations:
+
+### When to Use File-Based Apps ✅
+- **Scripts and utilities**: Quick automation tasks and command-line tools
+- **Prototypes and demos**: Fast proof-of-concepts and experimentation
+- **Learning and teaching**: Educational examples and tutorials
+- **Single-developer projects**: Personal tools and one-off scripts
+
+### When NOT to Use File-Based Apps ❌
+- **Production applications**: Enterprise or mission-critical systems
+- **Team collaboration**: Projects with multiple developers
+- **Complex applications**: Large codebases requiring extensive organization
+- **Advanced CI/CD pipelines**: Applications needing sophisticated build and deployment processes
+
+### Key Limitations
+
+**Scalability & Organization**
+- Single-file constraint makes it difficult to organize large codebases
+- No support for traditional solution (.sln) and project (.csproj) structures
+- Limited ability to split code across multiple files and namespaces
+
+**Tooling & IDE Support**
+- Reduced IntelliSense and debugging capabilities compared to full projects
+- Limited refactoring and code analysis features
+- Some IDE features may not work as expected
+
+**Configuration & Customization**
+- No `.csproj` file for fine-grained build configuration
+- Limited control over compilation settings and output
+- Cannot easily customize MSBuild targets or tasks
+
+**Testing & Quality Assurance**
+- Difficult to integrate with unit testing frameworks
+- Limited support for code coverage and quality tools
+- Challenging to implement comprehensive test suites
+
+**Dependency Management**
+- Simple `#:package` directives are less powerful than full NuGet integration
+- Limited control over transitive dependencies and version conflicts
+- Harder to manage complex dependency scenarios
+
+**Team Development**
+- Not designed for version control workflows with multiple contributors
+- Lacks structure for code reviews and collaborative development
+- Difficult to enforce coding standards and architectural patterns
+
+### Recommendation
+
+**Use file-based apps for rapid experimentation and learning, but migrate to traditional project-based solutions when your application grows in complexity, requires team collaboration, or moves toward production deployment.**
+
 ---
 
 **Note**: This feature requires .NET 10 SDK or later.
