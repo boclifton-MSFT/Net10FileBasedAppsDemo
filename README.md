@@ -14,7 +14,7 @@ This repository includes a devcontainer configuration with .NET 10 SDK pre-insta
 
 File-based apps in .NET 10 let you:
 - Write C# code in a single `.cs` file
-- Run it directly with `dotnet run filename.cs`
+- Run it directly with `dotnet run filename.cs` or simply `dotnet filename.cs`
 - No `.csproj` or `.sln` files needed
 - Use NuGet packages with `#:package` directives
 - Create web APIs with `#:sdk` directives
